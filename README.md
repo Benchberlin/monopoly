@@ -1,2 +1,2 @@
 # monopoly
-Basic Monopolyy
+Basic Monopoly
