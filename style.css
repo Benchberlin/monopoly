@@ -1,55 +1,18 @@
-#field1 {
-  background-color: yellow;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 100px);
+  background-color: #2196f3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
 }
 
-#field2 {
+div > div:hover {
   background-color: red;
-}
-
-#field3 {
-  background-color: violet ;
-}
-#fiedl4 {
-  background-color: yellow;
-}
-#field5 {
-  background-color: yellow;
-}
-#field6 {
-  background-color: yellow;
-}
-#field7 {
-  background-color: yellow;
-}
-#field8 {
-  background-color: yellow;
-}
-#field9 {
-  background-color: yellow;
-}
-#field10 {
-  background-color: yellow;
-}
-#field11 {
-  background-color: yellow;
-}
-
-#field12 {
-  background-color: yellow;
-}
-
-#field13 {
-  background-color: yellow;
-}
-
-#fiedl14 {
-  background-color: yellow;
-}
-
-#field15 {
-  background-color: yellow;
-}
-
-#field16 {
-  background-color: yellow;
 }

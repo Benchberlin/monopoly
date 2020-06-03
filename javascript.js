@@ -1,20 +1,20 @@
 const gameBoard = [
-  10,
+  50,
   100,
-  4,
+  50,
+  -100,
   -40,
-  -40,
-  40,
-  -1500,
-  30,
-  -50,
-  10,
-  5,
-  6,
-  -4,
-  2,
-  40,
   20,
+  -1500,
+  300,
+  -50,
+  100,
+  50,
+  60,
+  -40,
+  20,
+  -400,
+  200,
 ];
 
 const player1 = {
@@ -24,6 +24,7 @@ const player1 = {
   move: function () {
     let dice = Math.floor(Math.random() * 6) + 1;
     this.position = (this.position + dice) % gameBoard.length;
+
     this.cash += gameBoard[dice];
     if (this.cash < 0) {
       console.log(this.name + " lost the game");
