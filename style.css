@@ -16,3 +16,12 @@
 div > div:hover {
   background-color: red;
 }
+
+.score {
+  border: 1px solid steelblue;
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+}
+
+
