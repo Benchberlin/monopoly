@@ -52,18 +52,19 @@ function resetAllColors(id) {
 const player1 = {
   name: "Adrian",
   cash: 1000,
-  position: 0,
+  position: 1,
   move: function () {
     resetAllColors(this.position);
     let dice = Math.floor(Math.random() * 6) + 1;
     document.getElementById("dicePlayer1").innerText = dice;
     this.position = (this.position + dice) % gameBoard.length;
-    this.cash += gameBoard[dice];
+    this.cash += gameBoard[this.position - 1];
     if (this.cash < 0) {
       console.log(this.name + " lost the game");
     }
 
     colorElementBlue(this.position);
+    document.getElementById("player1Cash").innerText = this.cash;
     console.log(
       this.name +
         " diced " +
@@ -71,7 +72,7 @@ const player1 = {
         " is in Position " +
         this.position +
         " and won " +
-        gameBoard[dice] +
+        gameBoard[this.position - 1] +
         " he now has " +
         this.cash
     );
@@ -81,7 +82,7 @@ const player1 = {
 const player2 = {
   name: "Ben",
   cash: 1000,
-  position: 0,
+  position: 1,
   move: function () {
     resetAllColors(this.position);
     let dice = Math.floor(Math.random() * 6) + 1;
@@ -89,11 +90,13 @@ const player2 = {
     document.getElementById("dicePlayer2").innerText = dice;
     this.position = (this.position + dice) % gameBoard.length;
 
-    this.cash += gameBoard[dice];
+    this.cash += gameBoard[this.position - 1];
     if (this.cash < 0) {
       console.log(this.name + "lost the game");
     }
     colorElementRed(this.position);
+    document.getElementById("player2Cash").innerText = this.cash;
+
     console.log(
       this.name +
         " diced " +
@@ -101,7 +104,7 @@ const player2 = {
         " is in Position " +
         this.position +
         " and won " +
-        gameBoard[dice] +
+        gameBoard[this.position - 1] +
         " he now has " +
         this.cash
     );
@@ -109,7 +112,11 @@ const player2 = {
 };
 
 function startGame() {
-  console.log("Helo!");
+  console.log("Hello!");
+  for (let i = 1; i <= 16; i++) {
+    document.getElementById("id" + i).innerText = gameBoard[i - 1];
+  }
+
   document.getElementById("player1Name").innerText = player1.name;
   document.getElementById("player2Name").innerText = player2.name;
 
